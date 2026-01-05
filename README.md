@@ -62,7 +62,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/docuextract-odia-ocr.git
+git clone https://github.com/tell2jyoti/docuextract-odia-ocr.git
 cd docuextract-odia-ocr
 
 # Create virtual environment
@@ -77,10 +77,39 @@ pip install -r requirements.txt
 
 ⚠️ **Note**: Due to size constraints, the full dataset (182K images) is not included in this repository.
 
-**Option 1: Use Preprocessed Splits (Recommended for Training)**
+The preprocessed dataset is available on **Hugging Face**: [tell2jyoti/odia-handwritten-ocr](https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr)
+
+**Option 1: Using Hugging Face Datasets (Recommended)**
+```python
+from datasets import load_dataset
+
+# Load the complete dataset
+dataset = load_dataset("tell2jyoti/odia-handwritten-ocr")
+
+# Access splits
+train_data = dataset['train']
+val_data = dataset['validation']
+test_data = dataset['test']
+
+print(f"Training samples: {len(train_data):,}")
+print(f"Validation samples: {len(val_data):,}")
+print(f"Test samples: {len(test_data):,}")
+```
+
+**Option 1B: Direct Download (JSON files)**
 ```bash
-# Download from Hugging Face (or your hosting service)
-# Coming soon: huggingface-cli download YOUR_USERNAME/odia-handwritten-ocr
+# Training split (145,717 images, 59.5 MB)
+wget https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr/resolve/main/train.json
+
+# Validation split (18,211 images, 7.4 MB)
+wget https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr/resolve/main/val.json
+
+# Test split (18,224 images, 7.4 MB)
+wget https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr/resolve/main/test.json
+
+# Metadata files
+wget https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr/resolve/main/metadata.json
+wget https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr/resolve/main/class_distribution.json
 ```
 
 **Option 2: Build Dataset from Scratch**
@@ -353,11 +382,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-**Project Maintainer**: [Your Name]
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+**Project Maintainer**: Jyoti
+- GitHub: [@tell2jyoti](https://github.com/tell2jyoti)
+- Hugging Face: [tell2jyoti](https://huggingface.co/tell2jyoti)
 
-**Project Link**: [https://github.com/yourusername/docuextract-odia-ocr](https://github.com/yourusername/docuextract-odia-ocr)
+**Project Links**:
+- GitHub: [https://github.com/tell2jyoti/docuextract-odia-ocr](https://github.com/tell2jyoti/docuextract-odia-ocr)
+- Dataset: [https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr](https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr)
 
 ---
 
@@ -394,9 +425,18 @@ If you use this dataset or code in your research, please cite:
 ```bibtex
 @software{docuextract2026,
   title={DocuExtract: Odia Handwritten OCR},
-  author={Your Name},
+  author={Jyoti},
   year={2026},
-  url={https://github.com/yourusername/docuextract-odia-ocr}
+  publisher={GitHub},
+  url={https://github.com/tell2jyoti/docuextract-odia-ocr}
+}
+
+@dataset{odia_handwritten_dataset2026,
+  title={Odia Handwritten Character Dataset},
+  author={Jyoti},
+  year={2026},
+  publisher={Hugging Face},
+  url={https://huggingface.co/datasets/tell2jyoti/odia-handwritten-ocr}
 }
 ```
 
