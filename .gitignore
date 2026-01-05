@@ -1,0 +1,235 @@
+# DocuExtract - Odia OCR .gitignore
+
+# ===========================
+# Large Dataset Files
+# ===========================
+# Exclude actual image files (too large for Git)
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+*.tiff
+
+# Exclude large annotation files (>100MB)
+**/handwritten_characters_full.json
+**/balanced_annotations.json
+**/complete_dataset.json
+**/train.json
+**/val.json
+**/test.json
+**/synthetic_missing_chars.json
+
+# Keep small metadata files (include these)
+!**/metadata.json
+!**/class_distribution.json
+
+# ===========================
+# Python
+# ===========================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ===========================
+# Machine Learning
+# ===========================
+# Model checkpoints (large files)
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pb
+*.onnx
+
+# Tensorboard logs
+runs/
+logs/
+tensorboard/
+
+# Weights & Biases
+wandb/
+
+# MLflow
+mlruns/
+
+# Datasets cache
+.cache/
+cache/
+*.cache
+
+# ===========================
+# IDE / Editors
+# ===========================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ===========================
+# Operating System
+# ===========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ===========================
+# Project Specific
+# ===========================
+# Downloaded raw datasets (keep in local only)
+data/raw/
+data/Odia_handwritten/
+data/Odia_Number/
+data/indicstr_data/
+data/dataset/
+data/wikipedia_data/
+
+# Generated balanced/synthetic data (too large)
+data/balanced/
+data/synthetic/
+data/processed/splits/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Compressed files
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# ===========================
+# Documentation Build
+# ===========================
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# ===========================
+# Git
+# ===========================
+*.orig
+*.rej
+
+# ===========================
+# IMPORTANT: Files to KEEP
+# ===========================
+# Despite ignoring *.json, keep these small files:
+!data/annotations/metadata.json
+!data/annotations/class_distribution.json
+!data/odia_characters_label.csv
+!fonts/*.ttf
+!requirements.txt
+!README.md
+!LICENSE
+!.gitignore
